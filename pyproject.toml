@@ -1,0 +1,17 @@
+[project]
+name = "chemlab-api"
+version = "0.1.0"
+description = "API REST with chemical data to practice secondary level chemical in a virtual lab"
+readme = "README.md"
+authors = [
+    { name = "P-drop", email = "pedrorincon.tec@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+chemlab-api = "chemlab_api:main"
+
+[build-system]
+requires = ["uv_build>=0.11.12,<0.12.0"]
+build-backend = "uv_build"
