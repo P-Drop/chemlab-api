@@ -47,9 +47,12 @@ chemlab-api/
 ├── src/
 │   └── chemlab/              # Application source (coming in Phase 0)
 ├── tests/                    # Test suite (coming in Phase 1)
+├── scripts/                  # Utility scripts (seed, migrations, etc.)
 ├── docker-compose.yml        # Local development services
 ├── Dockerfile                # API container definition
 ├── pyproject.toml            # Dependencies, Ruff, mypy config
+├── uv.lock                   # Locked dependency versions
+├── .python-version           # Python version pin (3.12)
 ├── CHANGELOG.md
 ├── ROADMAP.md
 └── README.md
@@ -59,14 +62,26 @@ chemlab-api/
 
 ---
 
-## Getting started
+## Setup
 
-> ⚠️ Full local setup (Docker, environment variables, database) will be documented once Phase 0 infrastructure is complete.
+> ⚠️ Full local setup (Docker, environment variables, database) will be documented once Phase 0 infrastructure is complete (v0.2.0).
+
+### Prerequisites
+- [uv](https://docs.astral.sh/uv/) - dependency and environment manager
+
+### Local development
 
 ```bash
 # Clone the repository
 git clone https://github.com/P-Drop/chemlab-api.git
 cd chemlab-api
+
+# Create virtual environment and install dependencies
+uv sync
+
+# Verify setup
+uv run python --version
+
 ```
 
 Check back once the `v0.2.0` milestone is closed for a working local setup guide.
