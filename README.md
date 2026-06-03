@@ -92,6 +92,13 @@ uv run python --version
 > runs the linter, formatter, type checker and a set of file-hygiene checks.
 > Commits that fail any of these checks are aborted before they are created.
 
+> **Windows users:** `uvicorn[standard]` includes `uvloop`, a high-performance
+> event loop that is **not available on native Windows**. The package will
+> install without errors, but `uvloop` is silently skipped on that platform —
+> Uvicorn falls back to the standard asyncio loop. There is no functional
+> impact, only a minor performance difference. For full parity with Linux/macOS
+> development, we recommend using [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install).
+
 ### Code quality
 
 The project enforces a strict quality baseline via pre-commit hooks and CI. You can run the same checks manually at any time:
