@@ -51,3 +51,17 @@ ignore = []
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+show_error_codes = true
+pretty = true
+exclude = [
+    "^\\.venv/",
+    "^migrations/",
+]
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
