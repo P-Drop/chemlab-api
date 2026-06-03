@@ -45,7 +45,7 @@ chemlab-api/
 │   ├── adr/                  # Architecture Decision Records
 │   └── vision/               # Product Vision document
 ├── src/
-│   └── chemlab/              # Application source (coming in Phase 0)
+│   └── chemlab_api/          # Application source (coming in Phase 0)
 ├── tests/                    # Test suite (coming in Phase 1)
 ├── scripts/                  # Utility scripts (seed, migrations, etc.)
 ├── docker-compose.yml        # Local development services
