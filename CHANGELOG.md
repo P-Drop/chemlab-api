@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `pre-commit install` instructions and code quality commands in `README.md`
+- Pre-commit hooks (`ruff`, `mypy`, file-hygiene checks, `no-commit-to-branch`)
+- mypy strict mode configured in `pyproject.toml`
+- Ruff linter and formatter configured in `pyproject.toml`
 - `README.md` with project overview, stack, and getting started guide
 - `ROADMAP.md` with phased delivery plan and current status
 - `CHANGELOG.md` following Keep a Changelog convention
