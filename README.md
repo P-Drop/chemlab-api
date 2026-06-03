@@ -76,13 +76,41 @@ chemlab-api/
 git clone https://github.com/P-Drop/chemlab-api.git
 cd chemlab-api
 
-# Create virtual environment and install dependencies
+# Create virtual environment and install dependencies (including dev tools)
 uv sync
+
+# Install pre-commit hooks (run once after cloning)
+uv run pre-commit install
 
 # Verify setup
 uv run python --version
 
 ```
+
+> **Why `pre-commit install`?** This activates the Git hooks defined in
+> `.pre-commit-config.yaml`. From this point on, every `git commit` automatically
+> runs the linter, formatter, type checker and a set of file-hygiene checks.
+> Commits that fail any of these checks are aborted before they are created.
+
+### Code quality
+
+The project enforces a strict quality baseline via pre-commit hooks and CI. You can run the same checks manually at any time:
+
+
+```bash
+# Run all pre-commit hooks against the entire repository
+uv run pre-commit run --all-files
+
+# Linter
+uv run ruff check --fix .
+
+# Formatter
+uv run ruff format .
+
+# Static type checker
+uv run mypy src/
+```
+
 
 Check back once the `v0.2.0` milestone is closed for a working local setup guide.
 
