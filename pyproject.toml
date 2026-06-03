@@ -15,3 +15,53 @@ chemlab-api = "chemlab_api:main"
 [build-system]
 requires = ["uv_build>=0.11.12,<0.12.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.1.0",
+    "pre-commit>=4.6.0",
+    "ruff>=0.15.15",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [
+    ".venv",
+    "migrations",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # Pyflakes
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "SIM",  # flake8-simplify
+    "C4",   # flake8-comprehensions
+    "N",    # pep8-naming
+]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["N802"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+show_error_codes = true
+pretty = true
+exclude = [
+    "^\\.venv/",
+    "^migrations/",
+]
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false

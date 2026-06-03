@@ -23,10 +23,10 @@ For a detailed history of changes, see [CHANGELOG.md](./CHANGELOG.md).
 | ADR-0001: Use of Architecture Decision Records | ✅ Done |
 | ADR-0002: Backend technology stack | ✅ Done |
 | `README.md`, `ROADMAP.md`, `CHANGELOG.md` | ✅ Done |
-| `pyproject.toml` with uv, Ruff, mypy | 🔲 Planned |
-| `Dockerfile` + `docker-compose.yml` (dev) | 🔲 Planned |
-| CI pipeline — lint, type-check, test (GitHub Actions) | 🔲 Planned |
-| Pre-commit hooks (Ruff, mypy) | 🔲 Planned |
+| `pyproject.toml` with uv, Ruff, mypy | ✅ Done |
+| `Dockerfile` + `docker-compose.yml` (dev) | 🔄 In progress |
+| CI pipeline — lint, type-check, test (GitHub Actions) | 🔄 In progress |
+| Pre-commit hooks (Ruff, mypy) | ✅ Done |
 
 ---
 
