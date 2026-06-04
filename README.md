@@ -47,6 +47,7 @@ chemlab-api/
 ├── src/
 │   └── chemlab_api/
 |       ├── main.py                 # Application entry point (composition)
+|       ├── py.typed                # PEP 561 marker
 |       ├── core/
 |       |   └── config.py           # Application settings (Pydantic)
 |       └── api/
@@ -54,7 +55,11 @@ chemlab-api/
 |               ├── router.py       # Aggregator for v1 endpoints
 |               └── endpoints/
 |                   └── health.py   # /health endpoint
-├── tests/                          # Test suite (coming in Phase 1)
+├── tests/
+|   ├── conftest.py                 # Shared fixtures (async HTTP client)
+|   └── api/
+|       └── v1/
+|           └── test_health.py      # Tests for /health endpoint
 ├── scripts/                        # Utility scripts (seed, migrations, etc.)
 ├── docker-compose.yml              # Local development services
 ├── Dockerfile                      # API container definition
@@ -126,6 +131,28 @@ uv run ruff format .
 # Static type checker
 uv run mypy src/
 ```
+
+### Testing
+
+The test suite uses **pytest** with async support and enforces a minimum coverage threshold of 80%.
+
+```bash
+# Run the full test suite
+uv run pytest
+
+# Run a specific test file
+uv run pytest tests/api/v1/test_health.py
+
+# Run with verbose output
+uv run pytest -v
+
+# Skip coverage measurement (faster iteration during development)
+uv run pytest --no-cov
+```
+
+After each run, an HTML coverage report is generated under `htmlcov/`. Open `htmlcov/index.html` in a browser to inspect which lines are covered.
+
+> **Coverage in CI.** The same suite produces a `coverage.xml` report consumed by the CI pipeline (see Phase 0 roadmap). Coverage below the configured threshold will cause the pipeline to fail.
 
 ### Running the API
 

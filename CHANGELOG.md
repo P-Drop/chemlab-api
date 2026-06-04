@@ -21,7 +21,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Centralised application settings via `pydantic-settings`
 - API metadata (title, description, version) wired into Swagger UI and ReDoc
 - Local API startup instructions in `README.md`
-
+- pytest, pytest-asyncio, pytest-cov and httpx as dev dependencies
+- Test suite scaffolding under `tests/` with shared `AsyncClient` fixture
+- First tesst suite for the `/health` endpoint
+- Pytest and coverage configuration in `pyproject.toml` (asyncio mode, branch coverage, HTML + XML reports, 80% threshold)
+- `py.typed` marker exposing the package's type information to mypy
+- Testing instructions in `README.md`
 
 
 
