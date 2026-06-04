@@ -9,7 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-> Changes staged for the next release will appear here.
+### Added
+
+- Ruff linter and formatter configured in `pyproject.toml`
+- mypy strict mode configured in `pyproject.toml`
+- Pre-commit hooks (`ruff`, `mypy`, file-hygiene checks, `no-commit-to-branch`)
+- `pre-commit install` instructions and code quality commands in `README.md`
+- FastAPI and Uvicorn as production dependencies
+- Modular application structure (`core/`, `api/v1/endpoints/`)
+- `GET /api/v1/health` endpoint with typed Pydantic response model
+- Centralised application settings via `pydantic-settings`
+- API metadata (title, description, version) wired into Swagger UI and ReDoc
+- Local API startup instructions in `README.md`
+
+
+
 
 ---
 
@@ -17,10 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `pre-commit install` instructions and code quality commands in `README.md`
-- Pre-commit hooks (`ruff`, `mypy`, file-hygiene checks, `no-commit-to-branch`)
-- mypy strict mode configured in `pyproject.toml`
-- Ruff linter and formatter configured in `pyproject.toml`
 - `README.md` with project overview, stack, and getting started guide
 - `ROADMAP.md` with phased delivery plan and current status
 - `CHANGELOG.md` following Keep a Changelog convention

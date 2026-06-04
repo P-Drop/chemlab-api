@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from chemlab-api!")
+"""ChemLab API package."""
