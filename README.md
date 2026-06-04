@@ -42,17 +42,26 @@ Architecture decisions are documented in [`docs/adr/`](./docs/adr/).
 ```
 chemlab-api/
 ├── docs/
-│   ├── adr/                  # Architecture Decision Records
-│   └── vision/               # Product Vision document
+│   ├── adr/                        # Architecture Decision Records
+│   └── vision/                     # Product Vision document
 ├── src/
-│   └── chemlab_api/          # Application source (coming in Phase 0)
-├── tests/                    # Test suite (coming in Phase 1)
-├── scripts/                  # Utility scripts (seed, migrations, etc.)
-├── docker-compose.yml        # Local development services
-├── Dockerfile                # API container definition
-├── pyproject.toml            # Dependencies, Ruff, mypy config
-├── uv.lock                   # Locked dependency versions
-├── .python-version           # Python version pin (3.12)
+│   └── chemlab_api/
+|       ├── main.py                 # Application entry point (composition)
+|       ├── core/
+|       |   └── config.py           # Application settings (Pydantic)
+|       └── api/
+|           └── v1/
+|               ├── router.py       # Aggregator for v1 endpoints
+|               └── endpoints/
+|                   └── health.py   # /health endpoint
+├── tests/                          # Test suite (coming in Phase 1)
+├── scripts/                        # Utility scripts (seed, migrations, etc.)
+├── docker-compose.yml              # Local development services
+├── Dockerfile                      # API container definition
+├── pyproject.toml                  # Dependencies, Ruff, mypy config
+├── uv.lock                         # Locked dependency versions
+├── .pre-commit-config.yaml         # Git hooks configuration
+├── .python-version                 # Python version pin (3.12)
 ├── CHANGELOG.md
 ├── ROADMAP.md
 └── README.md
@@ -64,7 +73,7 @@ chemlab-api/
 
 ## Setup
 
-> ⚠️ Full local setup (Docker, environment variables, database) will be documented once Phase 0 infrastructure is complete (v0.2.0).
+> ⚠️ Docker-based setup with PostgreSQL is planned for v0.2.0 (Phase 0 completion). For now, the API runs against an in-memory configuration only.
 
 ### Prerequisites
 - [uv](https://docs.astral.sh/uv/) - dependency and environment manager
@@ -118,8 +127,26 @@ uv run ruff format .
 uv run mypy src/
 ```
 
+### Running the API
 
-Check back once the `v0.2.0` milestone is closed for a working local setup guide.
+Start the development server with hot reload:
+
+```bash
+uv run uvicorn chemlab_api.main:app --reload
+```
+
+Once the server is running, the following endpoints are available:
+
+| URL | Description |
+| --- | ---|
+| `http://127.0.0.1:8000/api/v1/health` | Health check (returns `{"status": "ok"}`) |
+| `http://127.0.0.1:8000/docs` | Swaggger UI - interactive API documentation |
+| `http://127.0.0.1:8000/redoc` | ReDoc - alternative API documentation |
+| `http://127.0.0.1:8000/openapi.json` | Raw OpenAPI specification |
+
+> The `--reload` flag is for development only. It restarts the server
+> automatically when source files change. **Do not use `--reload` in production.**
+
 
 ---
 
