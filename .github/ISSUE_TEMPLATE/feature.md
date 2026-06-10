@@ -1,33 +1,32 @@
-
 ---
 name: Feature
-about: Propuesta de nueva funcionalidad
+about: New feature proposal
 title: "[FEATURE]"
 labels: feature
 assignees: ""
 ---
 
-## Contexto
-[¿Por qué hace falta esto¿ ¿Qué problema resuelve?]
+## Context
+[Why is this needed? What problem does it solve?]
 
-## Descripción
-[Qué se va a construir en términos funcionales]
+## Description
+[What is going to be built?]
 
-## Criterios de aceptación
-- [ ] Criterio 1
-- [ ] Criterio 2
-- [ ] Criterio 3
+## Acceptance criteria
+- [ ] ...
+- [ ] ...
+- [ ] ...
 
-## Notas técnicas
-[Decisiones de diseño, librerías a usar, etc. Opcional]
+## Technical notes
+[Design decisions, libraries to use, etc. Optional]
 
-## Dependencias
-[Otros issues que deben cerrarse antes. Opcional]
+## Dependencies
+[Other issues that need to be closed first. Optional]
 
-## Definición de Hecho (DoD)
-- [ ] Código implementado
-- [ ] Test unitarios y/o de integración añadidos
-- [ ] Cobertura ≥ umbral acordado
-- [ ] Documentación actualizada
-- [ ] Linter y mypy en verde
-- [ ] PR revisado (auto-review sin colaboradores)
+## Definition of Done (DoD)
+- [ ] Code implemented
+- [ ] Unit and/or integration tests added
+- [ ] Coverage ≥ agreed threshold
+- [ ] Docs updated
+- [ ] Linter and mypy green checks
+- [ ] PR reviewed (auto-review without collaborators)

@@ -1,30 +1,29 @@
-
 ---
 name: Bug
-about: Reportar un fallo
+about: Bug report
 title: "[BUG]"
 labels: bug
 assignees: ""
 ---
 
-## Descripción del bug
-[Qué ocurre]
+## Bug description
+[What is happening]
 
-## Pasos para reproducir
+## Reproduction steps
 1. ...
 2. ...
 3. ...
 
-## Comportamiento esperado
-[Qué debería ocurrir]
+## Expected behavior
+[What should happen]
 
-## Comportamiento actual
-[Qué ocurre realmente]
+## Actual behavior
+[What is really happening]
 
-## Entorno
-- Versión:
-- SO:
+## Environment
+- Version:
+- OS:
 - Python:
 
-## Logs / capturas
-[Si aplica]
+## Logs / screenshots
+[If applies]

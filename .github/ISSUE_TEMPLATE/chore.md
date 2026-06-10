@@ -1,17 +1,16 @@
-
 ---
 name: Chore
-about: Tarea de mantenimiento o infraestructura
+about: Maintenance or infrastructure task
 title: "[CHORE]"
 labels: chore
 assignees: ""
 ---
 
-## Descripción
-[Qué hay que hacer]
+## Description
+[What to do]
 
-## Justificación
-[Por qué ahora]
+## Justification
+[Why now]
 
-## Criterios de aceptación
+## Acceptance criteria
 - [ ] ...

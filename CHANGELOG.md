@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `py.typed` marker exposing the package's type information to mypy
 - Testing instructions in `README.md`
 
+### Changed
+
+- Translate all GitHub issue and PR templates to English for repository-wide language consistency
+- Fix issue template YAML frontmatter so the templante chooser is displayed at /issue/new/choose
 
 
 ---
