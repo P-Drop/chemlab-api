@@ -21,10 +21,10 @@ Closes #XX
 - [ ] Code follows project conventions (Ruff, mypy)
 - [ ] Added/Updated Tests
 - [ ] Local tests pass (`pytest`)
-- [ ] Linter green check(`ruff check`)
-- [ ] Type checker pass(`mypy`)
+- [ ] Linter green check (`ruff check`)
+- [ ] Type checker pass (`mypy`)
 - [ ] Documentation updated if applies
 - [ ] I have reviewed my own PR before asking for review
 
 ## Additional notes
-[Screenshots, relevant desing rules, technical debt generated, etc.]
+[Screenshots, relevant design rules, technical debt generated, etc.]
