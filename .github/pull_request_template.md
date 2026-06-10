@@ -1,10 +1,10 @@
-## Resumen
-[Qué cambia este PR en una o dos frases]
+## Summary
+[What does it change in this PR]
 
-## Issue relacionado
+## Related issue
 Closes #XX
 
-## Tipo de cambio
+## Type of change
 - [ ] Feature
 - [ ] Bug fix
 - [ ] Refactor
@@ -12,19 +12,19 @@ Closes #XX
 - [ ] Chore / infra
 - [ ] Test
 
-## Cambios introducidos
+## Changes introduced
 - ...
 - ...
 - ...
 
 ## Checklist
-- [ ] El código sigue las convenciones del proyecto (Ruff, mypy)
-- [ ] Test añadidos/actualizados
-- [ ] Tests pasan localmente (`pytest`)
-- [ ] Linter en verde (`ruff check`)
-- [ ] Type checker en verde (`mypy`)
-- [ ] Documentación actualizada si aplica
-- [ ] He revisado mi propio PR antes de pedir revisión
+- [ ] Code follows project conventions (Ruff, mypy)
+- [ ] Added/Updated Tests
+- [ ] Local tests pass (`pytest`)
+- [ ] Linter green check(`ruff check`)
+- [ ] Type checker pass(`mypy`)
+- [ ] Documentation updated if applies
+- [ ] I have reviewed my own PR before asking for review
 
-## Notas adicionales
-[Capturas, decisiones de diseño relevantes, deuda técnica generada, etc.]
+## Additional notes
+[Screenshots, relevant desing rules, technical debt generated, etc.]
