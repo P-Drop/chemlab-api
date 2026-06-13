@@ -1,0 +1,37 @@
+# Version control
+.git/
+.gitignore
+
+# Python bytecode and build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+
+# Virtual environment (recreated inside the image via `uv sync`)
+.venv/
+
+# Tooling caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Coverage reports
+.coverage
+coverage.xml
+htmlcov/
+
+# Environment files (runtime config is injected by Compose, never baked in)
+.env
+.env.*
+
+# Container and CI definitions (not needed inside the image)
+Dockerfile
+docker-compose.yml
+.dockerignore
+.github/
+
+# Editor and OS noise
+.vscode/
+.idea/
+.DS_Store
