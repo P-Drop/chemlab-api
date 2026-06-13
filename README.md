@@ -63,22 +63,23 @@ chemlab-api/
 ├── scripts/                        # Utility scripts (seed, migrations, etc.)
 ├── docker-compose.yml              # Local development services
 ├── Dockerfile                      # API container definition
+├── .dockerignore
 ├── pyproject.toml                  # Dependencies, Ruff, mypy config
 ├── uv.lock                         # Locked dependency versions
 ├── .pre-commit-config.yaml         # Git hooks configuration
+├── .env.example                    # Enviroment variables
 ├── .python-version                 # Python version pin (3.12)
 ├── CHANGELOG.md
 ├── ROADMAP.md
 └── README.md
 ```
 
-> Folders marked as "coming in Phase X" are planned but not yet created.
 
 ---
 
 ## Setup
 
-> ⚠️ Docker-based setup with PostgreSQL is planned for v0.2.0 (Phase 0 completion). For now, the API runs against an in-memory configuration only.
+> ℹ️ A containerised setup for the API is available — see [Running with Docker](#running-with-docker). PostgreSQL integration arrives in Phase 1; the current image runs the API with no database yet.
 
 ### Prerequisites
 - [uv](https://docs.astral.sh/uv/) - dependency and environment manager
@@ -159,20 +160,51 @@ After each run, an HTML coverage report is generated under `htmlcov/`. Open `htm
 Start the development server with hot reload:
 
 ```bash
-uv run uvicorn chemlab_api.main:app --reload
+uv run uvicorn chemlab_api.main:app --reload --port 8030
 ```
 
 Once the server is running, the following endpoints are available:
 
 | URL | Description |
 | --- | ---|
-| `http://127.0.0.1:8000/api/v1/health` | Health check (returns `{"status": "ok"}`) |
-| `http://127.0.0.1:8000/docs` | Swaggger UI - interactive API documentation |
-| `http://127.0.0.1:8000/redoc` | ReDoc - alternative API documentation |
-| `http://127.0.0.1:8000/openapi.json` | Raw OpenAPI specification |
+| `http://127.0.0.1:8030/api/v1/health` | Health check (returns `{"status": "ok"}`) |
+| `http://127.0.0.1:8030/docs` | Swaggger UI - interactive API documentation |
+| `http://127.0.0.1:8030/redoc` | ReDoc - alternative API documentation |
+| `http://127.0.0.1:8030/openapi.json` | Raw OpenAPI specification |
 
 > The `--reload` flag is for development only. It restarts the server
 > automatically when source files change. **Do not use `--reload` in production.**
+
+### Running with Docker
+
+The API ships with a multi-stage `Dockerfile` and a `docker-compose.yml` for a one-command local setup, with the closest parity to the future production environment.
+
+**Prerequisites:** Docker and Docker Compose v2 (v2.24+).
+
+```bash
+# Create your local env file from the template (first time only)
+cp .env.example .env
+
+# Build the image and start the API
+docker compose up --build
+```
+
+The API is then available at `http://localhost:8030/api/v1/health` (Swagger UI at `/docs`).
+
+**What you get out of the box:**
+
+- **Hot reload:** `./src` is mounted into the container, so editing code reloads the server automatically - no rebuild needed.
+- **Health check:** `docker compose ps` reports the service as `healthy` once `/api/v1/health` responds.
+- **Configurable host port:** the container always listens on `8030` internally. To expose it on a different port, set `API_PORT` in `.env` (e.g. `API_PORT=9000` → `http://localhost:9000`).
+
+
+Stop and remove the containers with:
+
+```bash
+docker compose down
+```
+
+> Changing dependencies (`pyproject.toml` / `uv.lock` ) requires a rebuild (`docker compose up --build` ). Editing appplication code does not.
 
 
 ---
