@@ -1,5 +1,6 @@
 # ChemLab API
 
+[![CI](https://github.com/P-Drop/chemlab-api/actions/workflows/ci.yml/badge.svg)](https://github.com/P-Drop/chemlab-api/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
