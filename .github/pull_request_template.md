@@ -4,7 +4,7 @@
 ## Related issue
 Closes #XX
 
-## Type of change
+## Change type
 - [ ] Feature
 - [ ] Bug fix
 - [ ] Refactor
@@ -12,12 +12,22 @@ Closes #XX
 - [ ] Chore / infra
 - [ ] Test
 
-## Changes introduced
+## Introduced changes
 - ...
 - ...
 - ...
 
-## Checklist
+## Key decisions
+
+1. ...
+2. ...
+
+## Out of scope
+
+- ...
+- ...
+
+## Definition of Done
 - [ ] Code follows project conventions (Ruff, mypy)
 - [ ] Added/Updated Tests
 - [ ] Local tests pass (`pytest`)
