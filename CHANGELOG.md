@@ -27,11 +27,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pytest and coverage configuration in `pyproject.toml` (asyncio mode, branch coverage, HTML + XML reports, 80% threshold)
 - `py.typed` marker exposing the package's type information to mypy
 - Testing instructions in `README.md`
+- Multi-stage `Dockerfile` for the API image (uv-based install, non-root runtime stage)
+- `docker-compose.yml` with an `api` service (hot-reload, healthcheck, `API_PORT`-configurable host port)
+- `.dockerignore` to scope the Docker build context
+- `.env.example` template documenting supported environment variables
+- "Running with Docker" guide in `README.md`
 
 ### Changed
 
 - Translate all GitHub issue and PR templates to English for repository-wide language consistency
 - Fix issue template YAML frontmatter so the templante chooser is displayed at /issue/new/choose
+- Local development now documented to run on port `8030` for parity with the Docker setup
 
 
 ---
