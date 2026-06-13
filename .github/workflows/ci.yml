@@ -1,0 +1,62 @@
+name: CI
+
+on:
+    push:
+      branches: [main]
+    pull_request:
+
+# Least privilege: this pipeline only reads the repo and uploads artifacts
+permissions:
+    contents: read
+
+# Cancel superseded runs for the same branch/PR to save runner minutes.
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    quality:
+        name: Quality checks
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        env:
+            # Use the interpreter provided by setup-python instead of letting uv
+            # download its own - single source of truth is .python-version
+            UV_PYTHON_DOWNLOADS: never
+        steps:
+            - name: Check out the repository
+              uses: actions/checkout@v6
+
+            - name: Set up Python
+              uses: actions/setup-python@v6
+              with:
+                python-version-file: .python-version
+
+            - name: Install uv (with cache)
+              uses: astral-sh/setup-uv@v8.2.0
+              with:
+                enable-cache: true
+
+            - name: Install dependencies
+              run: uv sync --frozen
+
+            - name: Lint (Ruff)
+              run: uv run ruff check .
+
+            - name: Format check (Ruff)
+              run: uv run ruff format --check .
+
+            - name: Type check (mypy)
+              run: uv run mypy
+
+            - name: Test with coverage (pytest)
+              run: uv run pytest
+
+            - name: Upload coverage report
+              if: always()
+              uses: actions/upload-artifact@v7
+              with:
+                name: coverage-html
+                path: htmlcov/
+                if-no-files-found: warn
+                retention-days: 7

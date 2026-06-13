@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.dockerignore` to scope the Docker build context
 - `.env.example` template documenting supported environment variables
 - "Running with Docker" guide in `README.md`
+- GitHub Actions CI pipeline runnig Ruff (lint + format check), mypy and pytest with coverage on every push to `main` and pull request; coverage report uploaded as a workflow artifact
+- CI status badge in `README.md`
 
 ### Changed
 
