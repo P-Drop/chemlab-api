@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [0.2.0] - 2026-06-13
+
 ### Added
 
 - Ruff linter and formatter configured in `pyproject.toml`
@@ -56,5 +60,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/adr/ADR-0002-backend-technology-stack.md` — backend stack decision (Python 3.12, FastAPI, PostgreSQL, SQLAlchemy 2.0, Pydantic v2, uv, Ruff, mypy, Docker)
 - MIT License
 
-[Unreleased]: https://github.com/P-Drop/chemlab-api/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/P-Drop/chemlab-api/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/P-Drop/chemlab-api/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/P-Drop/chemlab-api/releases/tag/v0.1.0
