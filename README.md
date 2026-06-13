@@ -42,6 +42,15 @@ Architecture decisions are documented in [`docs/adr/`](./docs/adr/).
 
 ```
 chemlab-api/
+├── .github
+│    ├── ISSUE_TEMPLATE             # Issue templates and chooser config
+│    │   ├── bug.md
+│    │   ├── chore.md
+│    │   ├── config.yml
+│    │   └── feature.md
+│    ├── pull_request_template.md   # Pull request template
+│    └── workflows
+│        └── ci.yml                 # CI pipeline (lint, type-check, tests)
 ├── docs/
 │   ├── adr/                        # Architecture Decision Records
 │   └── vision/                     # Product Vision document
