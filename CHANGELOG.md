@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [0.2.0] - 2026-06-13
+
 ### Added
 
 - Ruff linter and formatter configured in `pyproject.toml`
@@ -23,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Local API startup instructions in `README.md`
 - pytest, pytest-asyncio, pytest-cov and httpx as dev dependencies
 - Test suite scaffolding under `tests/` with shared `AsyncClient` fixture
-- First tesst suite for the `/health` endpoint
+- First test suite for the `/health` endpoint
 - Pytest and coverage configuration in `pyproject.toml` (asyncio mode, branch coverage, HTML + XML reports, 80% threshold)
 - `py.typed` marker exposing the package's type information to mypy
 - Testing instructions in `README.md`
@@ -32,13 +36,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.dockerignore` to scope the Docker build context
 - `.env.example` template documenting supported environment variables
 - "Running with Docker" guide in `README.md`
-- GitHub Actions CI pipeline runnig Ruff (lint + format check), mypy and pytest with coverage on every push to `main` and pull request; coverage report uploaded as a workflow artifact
+- GitHub Actions CI pipeline running Ruff (lint + format check), mypy and pytest with coverage on every push to `main` and pull request; coverage report uploaded as a workflow artifact
 - CI status badge in `README.md`
 
 ### Changed
 
 - Translate all GitHub issue and PR templates to English for repository-wide language consistency
-- Fix issue template YAML frontmatter so the templante chooser is displayed at /issue/new/choose
+- Fix issue template YAML frontmatter so the template chooser is displayed at /issue/new/choose
 - Local development now documented to run on port `8030` for parity with the Docker setup
 
 
@@ -56,5 +60,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/adr/ADR-0002-backend-technology-stack.md` — backend stack decision (Python 3.12, FastAPI, PostgreSQL, SQLAlchemy 2.0, Pydantic v2, uv, Ruff, mypy, Docker)
 - MIT License
 
-[Unreleased]: https://github.com/P-Drop/chemlab-api/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/P-Drop/chemlab-api/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/P-Drop/chemlab-api/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/P-Drop/chemlab-api/releases/tag/v0.1.0

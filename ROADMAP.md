@@ -8,11 +8,13 @@ For a detailed history of changes, see [CHANGELOG.md](./CHANGELOG.md).
 
 ## Current status
 
-**Phase 0 — Repository setup · 🔄 In progress**
+**Phase 0 — Repository % project foundation · ✅ Done (v0.2.0)**
+
+Next up: **Phase 1 — MVP: Periodic table API** · 🔄 In progress · Target: Month 2
 
 ---
 
-## Phase 0 — Repository & project foundation
+## Phase 0 — Repository & project foundation · ✅ Done
 
 > Goal: professional repository baseline before writing any production code.
 
@@ -24,27 +26,27 @@ For a detailed history of changes, see [CHANGELOG.md](./CHANGELOG.md).
 | ADR-0002: Backend technology stack | ✅ Done |
 | `README.md`, `ROADMAP.md`, `CHANGELOG.md` | ✅ Done |
 | `pyproject.toml` with uv, Ruff, mypy | ✅ Done |
-| `Dockerfile` + `docker-compose.yml` (dev) | 🔄 In progress |
-| CI pipeline — lint, type-check, test (GitHub Actions) | 🔄 In progress |
+| `Dockerfile` + `docker-compose.yml` (dev) | ✅ Done |
+| CI pipeline — lint, type-check, test (GitHub Actions) | ✅ Done |
 | Pre-commit hooks (Ruff, mypy) | ✅ Done |
 
 ---
 
-## Phase 1 — MVP: Periodic table API · 🔲 Planned · Target: Month 2
+## Phase 1 — MVP: Periodic table API · 🔄 In progress · Target: Month 2
 
 > Goal: deployable REST API serving structured data for all 118 chemical elements, with automated tests and live documentation.
 
 | Task | Status |
 |---|---|
-| Database schema for chemical elements | 🔲 Planned |
-| Alembic migration strategy (ADR pending) | 🔲 Planned |
-| Seed script — 118 elements dataset | 🔲 Planned |
-| `GET /elements` — list all elements | 🔲 Planned |
-| `GET /elements/{symbol}` — element detail | 🔲 Planned |
-| Pydantic response schemas | 🔲 Planned |
-| Unit and integration tests (≥ 80 % coverage) | 🔲 Planned |
-| OpenAPI docs available at `/docs` | 🔲 Planned |
-| Production deployment + CI/CD (ADR pending) | 🔲 Planned |
+| Database schema for chemical elements | 🔄 In progress |
+| Alembic migration strategy (ADR pending) | 🔄 In progress |
+| Seed script — 118 elements dataset | 🔄 In progress |
+| `GET /elements` — list all elements | 🔄 In progress |
+| `GET /elements/{symbol}` — element detail | 🔄 In progress |
+| Pydantic response schemas | 🔄 In progress |
+| Unit and integration tests (≥ 80 % coverage) | 🔄 In progress |
+| OpenAPI docs available at `/docs` | 🔄 In progress |
+| Production deployment + CI/CD (ADR pending) | 🔄 In progress |
 
 ---
 

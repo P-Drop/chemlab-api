@@ -42,6 +42,15 @@ Architecture decisions are documented in [`docs/adr/`](./docs/adr/).
 
 ```
 chemlab-api/
+├── .github
+│    ├── ISSUE_TEMPLATE             # Issue templates and chooser config
+│    │   ├── bug.md
+│    │   ├── chore.md
+│    │   ├── config.yml
+│    │   └── feature.md
+│    ├── pull_request_template.md   # Pull request template
+│    └── workflows
+│        └── ci.yml                 # CI pipeline (lint, type-check, tests)
 ├── docs/
 │   ├── adr/                        # Architecture Decision Records
 │   └── vision/                     # Product Vision document
@@ -68,7 +77,7 @@ chemlab-api/
 ├── pyproject.toml                  # Dependencies, Ruff, mypy config
 ├── uv.lock                         # Locked dependency versions
 ├── .pre-commit-config.yaml         # Git hooks configuration
-├── .env.example                    # Enviroment variables
+├── .env.example                    # Environment variables template
 ├── .python-version                 # Python version pin (3.12)
 ├── CHANGELOG.md
 ├── ROADMAP.md
@@ -169,7 +178,7 @@ Once the server is running, the following endpoints are available:
 | URL | Description |
 | --- | ---|
 | `http://127.0.0.1:8030/api/v1/health` | Health check (returns `{"status": "ok"}`) |
-| `http://127.0.0.1:8030/docs` | Swaggger UI - interactive API documentation |
+| `http://127.0.0.1:8030/docs` | Swagger UI - interactive API documentation |
 | `http://127.0.0.1:8030/redoc` | ReDoc - alternative API documentation |
 | `http://127.0.0.1:8030/openapi.json` | Raw OpenAPI specification |
 
@@ -205,7 +214,7 @@ Stop and remove the containers with:
 docker compose down
 ```
 
-> Changing dependencies (`pyproject.toml` / `uv.lock` ) requires a rebuild (`docker compose up --build` ). Editing appplication code does not.
+> Changing dependencies (`pyproject.toml` / `uv.lock`) requires a rebuild (`docker compose up --build`). Editing application code does not.
 
 
 ---
