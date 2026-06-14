@@ -34,7 +34,15 @@ Most public secondary schools in Spain lack the resources, space, or time for re
 | Testing | pytest + pytest-asyncio + httpx |
 | Containerisation | Docker + Docker Compose |
 
-Architecture decisions are documented in [`docs/adr/`](./docs/adr/).
+---
+
+## Architecture decisions
+
+Significant technical decisions are recorded as Architecture Decision Records (ADRs) in [`docs/adr/`](./docs/adr/), following the MADR format:
+
+- [ADR-0001 — Use of Architecture Decision Records](./docs/adr/ADR-0001-use-of-architecture-decision-records.md)
+- [ADR-0002 — Backend technology stack](./docs/adr/ADR-0002-backend-technology-stack.md)
+- [ADR-0003 — Chemical elements dataset selection](./docs/adr/ADR-0003-chemical-elements-dataset-selection.md)
 
 ---
 
