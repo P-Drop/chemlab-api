@@ -243,6 +243,12 @@ This project is in early development and not yet ready for external contribution
 
 ---
 
+## Acknowledgements
+
+Periodic table element data is sourced from the [PubChem Periodic Table](https://pubchem.ncbi.nlm.nih.gov/periodic-table/) (NLM/NCBI), in the public domain per the [NLM data usage policy](https://www.ncbi.nlm.nih.gov/home/about/policies/).
+
+---
+
 ## License
 
 Distributed under the [MIT License](./LICENSE). © 2026 P-Drop.
