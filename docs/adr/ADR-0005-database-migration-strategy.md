@@ -24,7 +24,7 @@ Two earlier decisions constrain the approach:
   interact with Alembic's autogeneration in ways that require explicit handling.
 
 This ADR documents the strategy only. Initialising Alembic and writing the first migration are
-tracked as F1-5; the seed script and the dataset enrichment are deferred to ADR-0006.
+tracked as F1-6; the seed script and the dataset enrichment are deferred to ADR-0006.
 
 ## Decision
 
