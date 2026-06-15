@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `docs/adr/ADR-0003-chemical-elements-dataset-selection.md` — chemical elements dataset selection (PubChem periodic-table CSV, vendored)
 - Architecture decisions section and data-source acknowledgement in `README.md`
-
+- `docs/adr/ADR-0004-element-data-model.md` — element data model
 
 ---
 
