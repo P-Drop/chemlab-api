@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Architecture decisions section and data-source acknowledgement in `README.md`
 - `docs/adr/ADR-0004-element-data-model.md` — element data model
 - `docs/adr/ADR-0005-database-migration-strategy.md` — Database migration strategy
+- `docs/adr/ADR-0006-element-dataset-seeding-and-enrichment.md` — Element dataset seeding and enrichment
 
 ---
 
