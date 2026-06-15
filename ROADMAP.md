@@ -38,15 +38,15 @@ Next up: **Phase 1 — MVP: Periodic table API** · 🔄 In progress · Target: 
 
 | Task | Status |
 |---|---|
-| Database schema for chemical elements | 🔄 In progress |
-| Alembic migration strategy (ADR pending) | 🔄 In progress |
-| Seed script — 118 elements dataset | 🔄 In progress |
-| `GET /elements` — list all elements | 🔄 In progress |
-| `GET /elements/{symbol}` — element detail | 🔄 In progress |
-| Pydantic response schemas | 🔄 In progress |
-| Unit and integration tests (≥ 80 % coverage) | 🔄 In progress |
-| OpenAPI docs available at `/docs` | 🔄 In progress |
-| Production deployment + CI/CD (ADR pending) | 🔄 In progress |
+| Database schema for chemical elements | 🔲 Planned |
+| Alembic migration strategy (ADR pending) | 🔲 Planned |
+| Seed script — 118 elements dataset | 🔲 Planned |
+| `GET /elements` — list all elements | 🔲 Planned |
+| `GET /elements/{symbol}` — element detail | 🔲 Planned |
+| Pydantic response schemas | 🔲 Planned |
+| Unit and integration tests (≥ 80 % coverage) | 🔲 Planned |
+| OpenAPI docs available at `/docs` | 🔲 Planned |
+| Production deployment + CI/CD (ADR pending) | 🔲 Planned |
 
 ---
 
