@@ -44,6 +44,7 @@ Significant technical decisions are recorded as Architecture Decision Records (A
 - [ADR-0002 — Backend technology stack](./docs/adr/ADR-0002-backend-technology-stack.md)
 - [ADR-0003 — Chemical elements dataset selection](./docs/adr/ADR-0003-chemical-elements-dataset-selection.md)
 - [ADR-0004 — Element data model](./docs/adr/ADR-0004-element-data-model.md)
+- [ADR-0005 — Database migration strategy](./docs/adr/ADR-0005-database-migration-strategy.md)
 
 ---
 
