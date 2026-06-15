@@ -8,7 +8,7 @@ For a detailed history of changes, see [CHANGELOG.md](./CHANGELOG.md).
 
 ## Current status
 
-**Phase 0 — Repository % project foundation · ✅ Done (v0.2.0)**
+**Phase 0 — Repository & project foundation · ✅ Done (v0.2.0)**
 
 Next up: **Phase 1 — MVP: Periodic table API** · 🔄 In progress · Target: Month 2
 
