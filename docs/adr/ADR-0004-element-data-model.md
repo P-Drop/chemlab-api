@@ -12,7 +12,7 @@ is deferred to ADR-0007.
 Phase 1 delivers a REST API serving the 118 chemical elements. Before any SQLAlchemy mapping
 (F1-4) or Pydantic schema (F1-7) is written, the `Element` entity needs a formal data model.
 This model drives the database schema, the public API contract, the migration and seeding
-strategy (ADR-0005) and the localisation approach.
+strategy (ADR-0005 and ADR-0006) and the localisation approach.
 
 The data source was fixed in ADR-0003: the PubChem CSV, vendored into the repository, with all
 text in English. Inspecting that dataset surfaces two facts that constrain the design:
@@ -22,7 +22,7 @@ text in English. Inspecting that dataset surfaces two facts that constrain the d
    Alkali metal, Alkaline earth metal, Transition metal, Post-transition metal, Metalloid,
    Nonmetal, Halogen, Noble gas, Lanthanide, Actinide), not a group number plus block. Group,
    period and block must therefore be **enriched** during seeding, derived from the atomic
-   number and the electron configuration. This couples the model to ADR-0005.
+   number and the electron configuration. This couples the model to ADR-0006.
 2. **The source has real gaps.** Out of 118 rows, the following counts are empty:
    `electron_affinity` 61, `electronegativity` 23, `density` 22, `boiling_point` 25,
    `atomic_radius` 19, `ionization_energy` 16, `melting_point` 15, `atomic_mass` 0. These
@@ -216,7 +216,7 @@ turned out to be unused is more disruptive. The MVP therefore starts narrow.
 ### Trade-offs
 
 - **Enrichment dependency:** `group_number`, `period` and `block` are not seedable from the raw
-  CSV; the seeding step (ADR-0005) must derive them, so the model is not loadable from the source
+  CSV; the seeding step (ADR-0006) must derive them, so the model is not loadable from the source
   artefact alone.
 - **Enum localisation moves to the application layer:** with `category` and `standard_state` as
   enums, their Spanish labels live outside the database (ADR-0007). If category metadata later
