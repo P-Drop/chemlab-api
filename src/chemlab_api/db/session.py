@@ -2,6 +2,7 @@
 
 from collections.abc import AsyncGenerator
 
+from sqlalchemy import text
 from sqlalchemy.ext.asyncio import (
     AsyncSession,
     async_sessionmaker,
@@ -19,3 +20,14 @@ async def get_session() -> AsyncGenerator[AsyncSession, None]:
     """Yield a database session per request, closed on exit"""
     async with async_session_factory() as session:
         yield session
+
+
+async def check_database_connection() -> None:
+    """Verify the database is reachable by runnig a trivial query."""
+    async with engine.connect() as conn:
+        await conn.execute(text("SELECT 1"))
+
+
+async def dispose_engine() -> None:
+    """Dispose of the engine's connection pool (called on shutdown)."""
+    await engine.dispose()
