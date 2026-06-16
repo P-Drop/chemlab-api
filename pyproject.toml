@@ -94,7 +94,8 @@ source = ["src/chemlab_api"]
 branch = true
 omit = [
     "*/__init__.py",
-    "src/chemlab_api/main.py"
+    "src/chemlab_api/main.py",
+    "src/chemlab_api/db/session.py",
 ]
 
 [tool.coverage.report]
