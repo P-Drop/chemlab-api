@@ -158,7 +158,7 @@ uv run ruff check --fix .
 uv run ruff format .
 
 # Static type checker
-uv run mypy src/
+uv run mypy
 ```
 
 ### Testing
