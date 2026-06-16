@@ -1,3 +1,5 @@
+from pydantic import SecretStr
+
 from chemlab_api.core.config import Settings
 
 
@@ -6,7 +8,7 @@ def test_database_url_assembles_async_postgres_url() -> None:
         postgres_host="localhost",
         postgres_port=5432,
         postgres_user="u",
-        postgres_password="p@ss:word/!",
+        postgres_password=SecretStr("p@ss:word/!"),
         postgres_db="chem",
     )
     url = settings.database_url
