@@ -71,6 +71,9 @@ chemlab-api/
 |       ├── py.typed                # PEP 561 marker
 |       ├── core/
 |       |   └── config.py           # Application settings (Pydantic)
+|       ├── db/
+|       |   ├── base.py             # Declarative Base + naming convention
+|       |   └── session.py          # Async engine, session, connectivity check
 |       └── api/
 |           └── v1/
 |               ├── router.py       # Aggregator for v1 endpoints
@@ -78,6 +81,10 @@ chemlab-api/
 |                   └── health.py   # /health endpoint
 ├── tests/
 |   ├── conftest.py                 # Shared fixtures (async HTTP client)
+|   ├── core/
+|   |   └── test_config.py          # Tests for Settings / database URL
+|   ├── db/
+|   |   └── test_base.py            # Tests for the declarative Base
 |   └── api/
 |       └── v1/
 |           └── test_health.py      # Tests for /health endpoint
