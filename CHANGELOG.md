@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `docs/adr/ADR-0001-use-of-architecture-decision-records.md` — Use of architecture decision records, translated to English.
 - `docs/adr/ADR-0002-backend-technology-stack.md` — Backend technology stack, translated to English.
+- Pre-commit mypy now type-checks `tests/` too, matching CI."
 
 ---
 
