@@ -2,7 +2,9 @@
 
 from importlib.metadata import version
 
+from pydantic import SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from sqlalchemy import URL
 
 
 class Settings(BaseSettings):
@@ -25,6 +27,25 @@ class Settings(BaseSettings):
         "laboratory for Spanish Secondary Education students."
     )
     api_version: str = version("chemlab-api")
+
+    # Database (PostgreSQL)
+    postgres_host: str = "localhost"
+    postgres_port: int = 5432
+    postgres_user: str = "chemlab"
+    postgres_password: SecretStr = SecretStr("chemlab")
+    postgres_db: str = "chemlab"
+
+    @property
+    def database_url(self) -> URL:
+        """Assemble the async SQLAlchemy connection URL from the DB settings."""
+        return URL.create(
+            drivername="postgresql+asyncpg",
+            username=self.postgres_user,
+            password=self.postgres_password.get_secret_value(),
+            host=self.postgres_host,
+            port=self.postgres_port,
+            database=self.postgres_db,
+        )
 
 
 settings = Settings()

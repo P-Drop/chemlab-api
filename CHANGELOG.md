@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/adr/ADR-0004-element-data-model.md` — element data model
 - `docs/adr/ADR-0005-database-migration-strategy.md` — Database migration strategy
 - `docs/adr/ADR-0006-element-dataset-seeding-and-enrichment.md` — Element dataset seeding and enrichment
+- Async database foundation: SQLAlchemy 2.0 async engine, `async_sessionmaker` session dependency, and declarative `Base` with a naming convention
+- PostgreSQL 16 service in `docker-compose.yml` (named volume, healthcheck, `api` waits for it)
+- Database connection settings assembled through pydantic-settings as a single source shared with Alembic
+- Startup database connectivity check and a "Database" section in `README.md`
 
 ### Changed
 

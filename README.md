@@ -71,6 +71,9 @@ chemlab-api/
 |       ├── py.typed                # PEP 561 marker
 |       ├── core/
 |       |   └── config.py           # Application settings (Pydantic)
+|       ├── db/
+|       |   ├── base.py             # Declarative Base + naming convention
+|       |   └── session.py          # Async engine, session, connectivity check
 |       └── api/
 |           └── v1/
 |               ├── router.py       # Aggregator for v1 endpoints
@@ -78,6 +81,10 @@ chemlab-api/
 |                   └── health.py   # /health endpoint
 ├── tests/
 |   ├── conftest.py                 # Shared fixtures (async HTTP client)
+|   ├── core/
+|   |   └── test_config.py          # Tests for Settings / database URL
+|   ├── db/
+|   |   └── test_base.py            # Tests for the declarative Base
 |   └── api/
 |       └── v1/
 |           └── test_health.py      # Tests for /health endpoint
@@ -100,7 +107,7 @@ chemlab-api/
 
 ## Setup
 
-> ℹ️ A containerised setup for the API is available — see [Running with Docker](#running-with-docker). PostgreSQL integration arrives in Phase 1; the current image runs the API with no database yet.
+> ℹ️ A containerised setup is available with the API and a PostgreSQL service — see [Running with Docker](#running-with-docker) and [Database](#database).
 
 ### Prerequisites
 - [uv](https://docs.astral.sh/uv/) - dependency and environment manager
@@ -227,6 +234,30 @@ docker compose down
 
 > Changing dependencies (`pyproject.toml` / `uv.lock`) requires a rebuild (`docker compose up --build`). Editing application code does not.
 
+### Database
+The API uses **PostgreSQL 16**, run as the `db` service in `docker-compose.yml` . `docker compose up` starts it alongside the API; the API waits for the database to be healthy and verifies connectivity on boot.
+
+Connection settings are read from these environment variables (see `env.example`):
+
+| Variable | Default | Desciption |
+| --- | --- | --- |
+| `POSTGRES_HOST` | `localhost` | DB host (set to `db` inside Docker Compose) |
+| `POSTGRES_PORT` | `5432` | DB port |
+| `POSTGRES_USER` | `chemlab` | Database role |
+| `POSTGRES_PASSWORD` | `chemlab` | Role password (development default) |
+| `POSTGRES_DB` | `chemlab` | Database name |
+
+Inside Compose the application reaches the database at host `db`, and the same variables configure both the Postgres container and the app. The port is published on `127.0.0.1:5432` for local inspection:
+
+```bash
+docker compose exec db psql -U chemlab -d chemlab
+```
+
+Data persists in the named volume `chemlab-db-data` . To reset the database (e.g. to apply a changed `POSTGRES_PASSWORD`), recreate the volume:
+
+```bash
+docker compose down -v
+```
 
 ---
 
