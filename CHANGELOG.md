@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - PostgreSQL 16 service in `docker-compose.yml` (named volume, healthcheck, `api` waits for it)
 - Database connection settings assembled through pydantic-settings as a single source shared with Alembic
 - Startup database connectivity check and a "Database" section in `README.md`
+- `src/chemlab_api/models/enums.py` — Element enum types (`ElementCategory`, `StandardState`, `OrbitalBlock`) mapped to native PostgreSQL enums
+- `src/chemlab_api/models/element.py` — Element ORM model with unique constraints, CHECK constraints, and timestamp management
 
 ### Changed
 
