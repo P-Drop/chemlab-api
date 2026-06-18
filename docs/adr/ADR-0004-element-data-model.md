@@ -10,7 +10,7 @@ is deferred to ADR-0007.
 ## Context
 
 Phase 1 delivers a REST API serving the 118 chemical elements. Before any SQLAlchemy mapping
-(F1-4) or Pydantic schema (F1-7) is written, the `Element` entity needs a formal data model.
+(F1-5) or Pydantic schema (F1-8) is written, the `Element` entity needs a formal data model.
 This model drives the database schema, the public API contract, the migration and seeding
 strategy (ADR-0005 and ADR-0006) and the localisation approach.
 
