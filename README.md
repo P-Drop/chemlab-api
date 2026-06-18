@@ -71,6 +71,10 @@ chemlab-api/
 |       ├── py.typed                # PEP 561 marker
 |       ├── core/
 |       |   └── config.py           # Application settings (Pydantic)
+|       ├── models/
+|       |   ├── __init__.py          # Models package (re-exports)
+|       |   ├── enums.py             # Element enum types
+|       |   └── element.py           # Element ORM model
 |       ├── db/
 |       |   ├── base.py             # Declarative Base + naming convention
 |       |   └── session.py          # Async engine, session, connectivity check
@@ -83,6 +87,8 @@ chemlab-api/
 |   ├── conftest.py                 # Shared fixtures (async HTTP client)
 |   ├── core/
 |   |   └── test_config.py          # Tests for Settings / database URL
+|   ├── models/
+|   |   └── test_element.py         # Tests for Element model and enums
 |   ├── db/
 |   |   └── test_base.py            # Tests for the declarative Base
 |   └── api/
