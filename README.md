@@ -6,6 +6,8 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
 [![Code style: Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
+> **Paused since v0.2.0.** I keep the repository public for its ADRs and its code-quality configuration - Ruff, mypy strict, pytest with 80% coverage threshold, Github Actions CI and a multi-stage Dockerfile), which are the fountation of my current workflow.
+
 **ChemLab** is an open-source virtual chemistry laboratory REST API designed for Secondary Education students in Spain (ESO and Bachillerato). It powers interactive simulations, a periodic table explorer, and curriculum-aligned exercises — all accessible from the browser, no lab required.
 
 > 🚧 **Early development.** The API is not yet publicly deployed. Follow the [Roadmap](./ROADMAP.md) for progress updates.
